@@ -4,20 +4,22 @@
 			<h1 class="display-4">Data Karyawan</h1>
 		</div>
 	</div>
-
-	<?php if ($this->session->flashdata()) : ?>
-		<div class="alert alert-success alert-dismissible fade show" role="alert">
-			Data Karyawan<strong> Berhasil!</strong> <?= $this->session->flashdata('message'); ?>.
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	<?php endif; ?>
+	<div class="container">
+		<?php if ($this->session->flashdata()) : ?>
+			<!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+				Data Karyawan<strong> Berhasil!</strong> <?= $this->session->flashdata('message'); ?>.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div> -->
+		<?php endif; ?>
+	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<a href="<?= base_url('karyawan/tambah') ?>" class="btn btn-primary">Tambah Data</a>
 		</div>
 	</div>
+	<div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
 	<div class="row mt-3">
 		<div class="col-md-6">
 			<form action="" method="POST">
@@ -62,7 +64,7 @@
 							<td>
 								<a href="<?= base_url(); ?>karyawan/update/<?= $krw['id']; ?>" class="btn btn-primary">Update</a>
 								<a href="<?= base_url(); ?>karyawan/detail/<?= $krw['id']; ?>" class="btn btn-warning">Detail</a>
-								<a href="<?= base_url(); ?>karyawan/delete/<?= $krw['id']; ?>" class="btn btn-danger" onclick="return confirm('yakin?');">Delete</a>
+								<a href="<?= base_url(); ?>karyawan/delete/<?= $krw['id']; ?>" class="btn btn-danger tombol-hapus">Delete</a>
 							</td>
 						</tr>
 
